@@ -1,0 +1,16 @@
+<%= simple_form_for(@time_table) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :room %>
+    <%= f.input :subject %>
+    <%= f.input :time %>
+    <%= f.input :day %>
+    <%= f.association :year %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

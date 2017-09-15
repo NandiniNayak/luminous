@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @year.name %>
+</p>
+
+<p>
+  <strong>Year group:</strong>
+  <%= @year.year_group %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @year.section %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @year.user.email %>
+</p>
+
+<%= link_to 'Edit', edit_year_path(@year) %> |
+<%= link_to 'Back', years_path %>

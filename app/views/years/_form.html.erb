@@ -1,0 +1,13 @@
+<%= simple_form_for(@year) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name , placeholder: "Enter your full name"  %>
+    <%= f.input :year_group , placeholder: "Enter your year groups" %>
+    <%= f.input :section , placeholder: "Enter your class name" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

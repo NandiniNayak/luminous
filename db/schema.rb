@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117022338) do
+ActiveRecord::Schema.define(version: 20170908014306) do
+
+  create_table "time_tables", force: :cascade do |t|
+    t.string   "room"
+    t.string   "subject"
+    t.time     "time"
+    t.string   "day"
+    t.integer  "year_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_time_tables_on_user_id"
+    t.index ["year_id"], name: "index_time_tables_on_year_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,6 +40,16 @@ ActiveRecord::Schema.define(version: 20170117022338) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "years", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "year_group"
+    t.string   "section"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_years_on_user_id"
   end
 
 end
