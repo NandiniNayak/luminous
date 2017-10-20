@@ -2,7 +2,7 @@
 
 <h1>Years</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th>Name</th>
@@ -19,7 +19,7 @@
         <td><%= year.name %></td>
         <td><%= year.year_group %></td>
         <td><%= year.section %></td>
-        <td><%= year.user %></td>
+        <td><%= year.user.email %></td>
         <td><%= link_to 'Show', year %></td>
         <td><%= link_to 'Edit', edit_year_path(year) %></td>
         <td><%= link_to 'Destroy', year, method: :delete, data: { confirm: 'Are you sure?' } %></td>
